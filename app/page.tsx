@@ -26,18 +26,24 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#D9E8F5] text-[#304269] flex flex-row justify-center p-4 space-x-4">
-      <main className="flex flex-wrap gap-4 items-start justify-start border border-[#304269] p-4 bg-white rounded-xl shadow-lg w-[64rem]">
+      {}
+      <main className="flex flex-col gap-4 border border-[#304269] p-4 bg-white rounded-xl shadow-lg w-5xl">
         <Header />
+        
         <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-          <SortableContext items={items} strategy={rectSortingStrategy}>
-            {items.map((id) => (
-              <Moveable key={id} id={id} movable={true}>
-                {id === 'links' ? <Links /> : <AboutMe />}
-              </Moveable>
-            ))}
-          </SortableContext>
+          {}
+          <div className="flex flex-wrap gap-4 items-start justify-start w-full">
+            <SortableContext items={items} strategy={rectSortingStrategy}>
+              {items.map((id) => (
+                <Moveable key={id} id={id} movable={true}>
+                  {id === 'links' ? <Links /> : <AboutMe />}
+                </Moveable>
+              ))}
+            </SortableContext>
+          </div>
         </DndContext>
       </main>
+      
       <aside className="flex flex-col space-y-4">
         {}
       </aside>
