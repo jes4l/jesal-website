@@ -3,17 +3,19 @@ import Image from 'next/image';
 
 export default function Links({ className = '', dragListeners = {} }: { className?: string; dragListeners?: any }) {
   return (
-    <div className={`w-48 bg-[#A7C7E7] border-2 border-[#304269] p-4 shadow-lg rounded-none ${className}`}>
+    <div className={`w-48 bg-[#A7C7E7] border-2 border-[#304269] p-4 shadow-lg rounded-none crt-screen ${className}`}>
       <div 
         className="bg-[#304269] text-white -mx-4 -mt-4 px-4 py-1 mb-4 flex items-center justify-between font-bold text-base cursor-grab"
         {...dragListeners}
       >
-        <span>Links</span>
+        {}
+        <span className="crt-text-glow">Links</span>
       </div>
       <div className="mb-2 -mt-2">
         <Image src="/assets/jesal-website-duck.gif" alt="Duck" width={160} height={50} unoptimized className="mx-auto border-2 border-[#304269]" />
       </div>
-      <div className="flex flex-col space-y-2 font-mono text-base -mt-2">
+      {}
+      <div className="flex flex-col space-y-2 font-mono text-base -mt-2 crt-text-glow">
         <a
           href="https://github.com/jes4l"
           target="_blank"
