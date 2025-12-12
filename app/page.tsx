@@ -9,7 +9,6 @@ import { SortableContext, rectSortingStrategy } from '@dnd-kit/sortable';
 
 export default function Home() {
   const [items, setItems] = useState(['links', 'about']);
-
   const handleDragEnd = (event: any) => {
     const { active, over } = event;
     if (active.id !== over.id) {
@@ -23,15 +22,11 @@ export default function Home() {
       });
     }
   };
-
   return (
     <div className="min-h-screen bg-[#D9E8F5] text-[#304269] flex flex-row justify-center p-4 space-x-4">
-      {}
-      <main className="flex flex-col gap-4 border border-[#304269] p-4 bg-white rounded-xl shadow-lg w-5xl">
+      <main className="flex flex-col gap-4 border-2 border-[#304269] p-4 bg-blend-color  rounded-none shadow-lg w-5xl">
         <Header />
-        
         <DndContext collisionDetection={closestCenter} onDragEnd={handleDragEnd}>
-          {}
           <div className="flex flex-wrap gap-4 items-start justify-start w-full">
             <SortableContext items={items} strategy={rectSortingStrategy}>
               {items.map((id) => (
@@ -43,9 +38,7 @@ export default function Home() {
           </div>
         </DndContext>
       </main>
-      
       <aside className="flex flex-col space-y-4">
-        {}
       </aside>
     </div>
   );
