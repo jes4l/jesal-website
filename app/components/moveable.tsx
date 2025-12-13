@@ -13,7 +13,7 @@ export default function Moveable({ id, children, movable = true }: { id: string;
     transition,
   };
   return (
-    <div ref={setNodeRef} style={style} {...attributes} className="shrink-0 cursor-default">
+    <div ref={setNodeRef} style={style} {...attributes} className="shrink-0 cursor-default" suppressHydrationWarning={true}>
       {React.cloneElement(children, { dragListeners: movable ? listeners : undefined })}
     </div>
   );
