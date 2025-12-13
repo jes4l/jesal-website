@@ -12,7 +12,7 @@ export default function Links({ className = '', dragListeners = {} }: { classNam
         <span className="crt-text-glow">Links</span>
       </div>
       <div className="mb-2 -mt-2">
-        <Image src="/assets/jesal-website-duck.gif" alt="Duck" width={160} height={50} unoptimized className="mx-auto border-2 border-[#304269]" />
+        <Image src="/assets/jesal-website-duck.gif" alt="Duck" width={160} height={50} unoptimized className="mx-auto" />
       </div>
       {}
       <div className="flex flex-col space-y-2 font-mono text-base -mt-2 crt-text-glow">
