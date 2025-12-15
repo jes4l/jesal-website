@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaCode } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 import Image from 'next/image';
 
 export default function Links({ className = '', dragListeners = {} }: { className?: string; dragListeners?: any }) {
@@ -8,13 +8,12 @@ export default function Links({ className = '', dragListeners = {} }: { classNam
         className="bg-[#304269] text-white -mx-4 -mt-4 px-4 py-1 mb-4 flex items-center justify-between font-bold text-base cursor-grab"
         {...dragListeners}
       >
-        {}
         <span className="crt-text-glow">Links</span>
       </div>
       <div className="mb-2 -mt-2">
         <Image src="/assets/jesal-website-duck.gif" alt="Duck" width={160} height={50} unoptimized className="mx-auto" />
       </div>
-      {}
+      
       <div className="flex flex-col space-y-2 font-mono text-base -mt-2 crt-text-glow">
         <a
           href="https://github.com/jes4l"
@@ -33,12 +32,10 @@ export default function Links({ className = '', dragListeners = {} }: { classNam
           <FaLinkedin size={16} className="mr-2" /> LinkedIn
         </a>
         <a
-          href="https://devpost.com/jes4l"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="mailto:jesalvadgama@gmail.com"
           className="text-[#304269] hover:underline flex items-center"
         >
-          <FaCode size={16} className="mr-2" /> Devpost
+          <FaEnvelope size={16} className="mr-2" /> Email
         </a>
       </div>
     </div>
