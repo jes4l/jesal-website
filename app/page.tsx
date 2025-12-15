@@ -4,11 +4,13 @@ import Links from './components/links';
 import Header from './components/header';
 import AboutMe from './components/aboutme';
 import EightBall from './components/8ball';
+import Guestbook from './components/guestbook';
 import Moveable from './components/moveable';
 import { DndContext, closestCenter } from '@dnd-kit/core';
 import { SortableContext, rectSortingStrategy } from '@dnd-kit/sortable';
+
 export default function Home() {
-  const [items, setItems] = useState(['links', 'about', '8ball']);
+  const [items, setItems] = useState(['links', 'about', '8ball', 'guestbook']);
   const [currentActiveId, setCurrentActiveId] = useState<string | null>(null);
   const [shakeCount, setShakeCount] = useState(0);
   const [lastX, setLastX] = useState<number | null>(null);
@@ -59,20 +61,20 @@ export default function Home() {
             if (event.active.id === '8ball') {
               const x = event.active.rect.current.translated?.left ?? 0;
               const y = event.active.rect.current.translated?.top ?? 0;
-              
+          
               const deltaX = x - (lastX ?? x);
               const deltaY = y - (lastY ?? y);
-              
+          
               const newDirX = deltaX > 0 ? 1 : (deltaX < 0 ? -1 : 0);
               const newDirY = deltaY > 0 ? 1 : (deltaY < 0 ? -1 : 0);
-              
+          
               if (Math.abs(deltaX) > 2 && newDirX !== 0 && newDirX !== directionX) {
                 setShakeCount((prev) => prev + 1);
               }
               if (Math.abs(deltaY) > 2 && newDirY !== 0 && newDirY !== directionY) {
                 setShakeCount((prev) => prev + 1);
               }
-              
+          
               setDirectionX(newDirX);
               setDirectionY(newDirY);
               setLastX(x);
@@ -88,7 +90,7 @@ export default function Home() {
                     <Links />
                   ) : id === 'about' ? (
                     <AboutMe />
-                  ) : (
+                  ) : id === 'guestbook' ? <Guestbook /> : (
                     <EightBall shakeCount={shakeCount} isDragging={currentActiveId === id} directionX={directionX} directionY={directionY} />
                   )}
                 </Moveable>
