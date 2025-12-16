@@ -2,11 +2,12 @@
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 
-export default function Header() {
+export default function Header({ title = "Jesal's Website" }: { title?: string }) {
   const [marqueeContent, setMarqueeContent] = useState('');
   const containerRef = useRef<HTMLDivElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
-  const text = "Jesal's Website ";
+  const text = `○ ${title} ○ `;
+
   useEffect(() => {
     if (containerRef.current && textRef.current) {
       const containerWidth = containerRef.current.clientWidth;
@@ -17,7 +18,7 @@ export default function Header() {
         setMarqueeContent(unit + unit);
       }
     }
-  }, []);
+  }, [title]);
 
   return (
     <div className="w-full bg-[#A7C7E7] border-2 border-[#304269] p-4 shadow-lg rounded-none crt-screen">
