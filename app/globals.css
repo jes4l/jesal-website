@@ -108,15 +108,16 @@ body::after {
   animation-iteration-count: 1;
 }
 
-@keyframes musicBounce {
-  0%   { transform: translateY(0) rotate(0deg); }
-  25%  { transform: translateY(-2px) rotate(-5deg); }
-  50%  { transform: translateY(0) rotate(0deg); }
-  75%  { transform: translateY(-1px) rotate(5deg); }
-  100% { transform: translateY(0) rotate(0deg); }
+@keyframes musicSway {
+  0%   { transform: rotate(0deg) scale(1); }
+  20%  { transform: rotate(-8deg) scale(1.05); }
+  40%  { transform: rotate(8deg) scale(1.05); }
+  60%  { transform: rotate(-4deg) scale(1.02); }
+  80%  { transform: rotate(4deg) scale(1.02); }
+  100% { transform: rotate(0deg) scale(1); }
 }
 
 .music-animate {
   display: inline-block;
-  animation: musicBounce 1.2s ease-in-out infinite;
+  animation: musicSway 1.5s ease-in-out infinite;
 }
