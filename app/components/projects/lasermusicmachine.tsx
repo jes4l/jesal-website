@@ -16,7 +16,7 @@ export default function LaserMusicMachine() {
           </span>
 
           <div className="flex items-center gap-1 group-hover:text-white transition-colors">
-            <span className="text-sm">🎶</span>
+            <span className="text-sm music-animate">🎶</span>
             <FaGithub className="w-4 h-4" />
           </div>
         </div>
