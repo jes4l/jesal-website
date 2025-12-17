@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import { FaGithub } from 'react-icons/fa';
 
 export default function LaserMusicMachine() {
   return (
@@ -16,12 +16,12 @@ export default function LaserMusicMachine() {
           </span>
 
           <div className="flex items-center gap-1 group-hover:text-white transition-colors">
-            <span className="text-sm music-animate">🎶</span>
+            <span className="text-sm emoji-animate">🎶</span>
             <FaGithub className="w-4 h-4" />
           </div>
         </div>
 
-        <div className="relative w-full h-38 border-b-2 border-[#304269] overflow-hidden">
+        <div className="relative w-full h-32 border-b-2 border-[#304269] overflow-hidden">
           <Image
             src="/assets/lasermusicmachine.jpg"
             alt="Laser Music Machine"

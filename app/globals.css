@@ -108,7 +108,7 @@ body::after {
   animation-iteration-count: 1;
 }
 
-@keyframes musicSway {
+@keyframes emojiSway {
   0%   { transform: rotate(0deg) scale(1); }
   20%  { transform: rotate(-8deg) scale(1.05); }
   40%  { transform: rotate(8deg) scale(1.05); }
@@ -117,7 +117,7 @@ body::after {
   100% { transform: rotate(0deg) scale(1); }
 }
 
-.music-animate {
+.emoji-animate {
   display: inline-block;
-  animation: musicSway 1.5s ease-in-out infinite;
+  animation: emojiSway 1.5s ease-in-out infinite;
 }
